@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nayab 🤍</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#fff7fa,#ffffff);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.screen{
+display:none;
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+max-width:700px;
+width:100%;
+text-align:center;
+}
+
+.active{
+display:block;
+}
+
+h2{
+color:#ff4d6d;
+margin-bottom:20px;
+}
+
+p{
+line-height:2;
+color:#555;
+font-size:1.1rem;
+}
+
+button{
+margin-top:25px;
+padding:14px 28px;
+border:none;
+border-radius:40px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+font-size:1rem;
+}
+
+.heart{
+position:absolute;
+pointer-events:none;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-120px);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="screen active" id="screen1">
+
+<h2>🤍 Support Kit Ready</h2>
+
+<p>
+
+Before continuing,
+
+<br><br>
+
+please remember:
+
+<br><br>
+
+You do not have to solve
+everything alone.
+
+<br><br>
+
+I am with you.
+
+</p>
+
+<button onclick="nextScreen()">
+Continue
+</button>
+
+</div>
+
+<div class="screen" id="screen2">
+
+<h2>Things Not Allowed Today</h2>
+
+<p>
+
+❌ Thinking nobody cares
+
+<br><br>
+
+❌ Carrying every burden alone
+
+<br><br>
+
+❌ Forgetting to smile
+
+</p>
+
+<button onclick="nextScreen()">
+Continue
+</button>
+
+</div>
+
+<div class="screen" id="screen3">
+
+<h2>Official Findings</h2>
+
+<p>
+
+After careful investigation,
+
+<br><br>
+
+it has been confirmed that:
+
+<br><br>
+
+Nayab has been trying
+to stay strong for everyone.
+
+</p>
+
+<button onclick="nextScreen()">
+Continue
+</button>
+
+</div>
+
+<div class="screen" id="screen4">
+
+<h2>Recommended Action</h2>
+
+<p>
+
+Someone should take care
+of Nayab too.
+
+<br><br>
+
+🤍
+
+</p>
+
+<button onclick="nextScreen()">
+Continue
+</button>
+
+</div>
+
+<div class="screen" id="screen5">
+
+<h2>One More Thing...</h2>
+
+<p>
+
+I don't know
+what you're dealing with.
+
+<br><br>
+
+And I may not be able
+to fix it.
+
+<br><br>
+
+But I can pray for you.
+
+</p>
+
+<button onclick="nextScreen()">
+Continue
+</button>
+
+</div>
+
+<div class="screen" id="screen6">
+
+<h2>🤍</h2>
+
+<p>
+
+And I can remind you
+
+<br><br>
+
+that you're not alone.
+
+</p>
+
+<button onclick="nextScreen()">
+Continue
+</button>
+
+</div>
+
+<div class="screen" id="screen7">
+
+<h2>🤍</h2>
+
+<p>
+
+Even on the days
+
+when you don't feel okay.
+
+<br><br>
+
+Even on the days
+
+when you don't want to talk.
+
+<br><br>
+
+Even on the days
+
+when the world feels heavy.
+
+</p>
+
+<button onclick="nextScreen()">
+Continue
+</button>
+
+</div>
+
+<div class="screen" id="screen8">
+
+<h2>Bas Itna Yaad Rakhna...</h2>
+
+<p>
+
+Tum akeli nahi ho.
+
+<br><br>
+
+Aur agar kabhi sab kuch
+thoda zyada lagne lage,
+
+<br><br>
+
+toh thoda sa bojh
+mujhe bhi de dena.
+
+<br><br>
+
+Jab bhi tumhe zarurat ho,
+
+main yahin hoon.
+
+<br><br>
+
+Aur haan...
+
+<br><br>
+
+Aaj thoda sa muskura lena.
+
+<br><br>
+
+Meri taraf se. 🤍
+
+</p>
+
+</div>
+
+<script>
+
+let currentScreen = 1;
+
+function nextScreen(){
+
+document.getElementById(
+"screen"+currentScreen
+).classList.remove("active");
+
+currentScreen++;
+
+if(currentScreen <= 8){
+
+document.getElementById(
+"screen"+currentScreen
+).classList.add("active");
+
+}
+
+}
+
+function createHeart(){
+
+const heart =
+document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = "🤍";
+
+heart.style.left =
+Math.random()*100 + "vw";
+
+heart.style.fontSize =
+(Math.random()*20 + 15) + "px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,350);
+
+</script>
+
+</body>
+</html>
